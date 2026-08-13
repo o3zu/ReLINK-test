@@ -35,7 +35,7 @@ login(){
     </div>`;
   return `
   <div class="appbar" style="justify-content:center;padding-top:38px">
-    <h1 style="font-size:24px;letter-spacing:1px">🐾 ReLINK</h1>
+    <h1 style="font-size:24px;letter-spacing:1px;position:static;">🐾 ReLINK</h1>
   </div>
   <div class="pad stack fade">
     <div style="text-align:center;margin:6px 0 4px">
