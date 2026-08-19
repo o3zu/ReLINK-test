@@ -397,7 +397,7 @@ function startMatch(){
   let p=0;
   const bar=document.getElementById('bar');
   const pct=document.getElementById('pct');
-  const fillRect=document.getElementById('paw-fill-rect'); // 追加
+  const fillRect=document.getElementById('paw-fill-rect');
   matchTimer=setInterval(()=>{
     if(S.cancelMatch){clearInterval(matchTimer);return;}
     p += Math.random()*7+3;
@@ -405,8 +405,12 @@ function startMatch(){
     bar.style.width=p+'%';
     pct.textContent=Math.round(p)+'%';
     
+    // 肉球のイラストが存在する実質的な高さに合わせて連動させる
     if(fillRect) {
-      fillRect.setAttribute('y', 100 - p);
+      const bottomY = 85; // 肉球の一番下の位置
+      const topY = 7;    // 肉球の一番上の位置
+      const currentY = bottomY - (p / 100) * (bottomY - topY);
+      fillRect.setAttribute('y', currentY);
     }
     
     if(p>=100){
