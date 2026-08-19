@@ -405,7 +405,7 @@ function startMatch(){
     bar.style.width=p+'%';
     pct.textContent=Math.round(p)+'%';
     
-    // 肉球のイラストが存在する実質的な高さに合わせて連動させる
+    // 肉球のイラストが存在する実質的な高さ（下端: 85, 上端: 15）に合わせて連動させる
     if(fillRect) {
       const bottomY = 85; // 肉球の一番下の位置
       const topY = 7;    // 肉球の一番上の位置
